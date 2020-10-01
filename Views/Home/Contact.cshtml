@@ -1,0 +1,36 @@
+﻿@model List<Practice.Models.Phonebook>
+<!--Ensure that you are getting the list by putting list-->
+
+
+<table class="table" style="width:100%; background-color:white; border:solid; border-bottom-width:2px; text-align:center; font-weight:bold;">
+    <thead class="thead-dark">
+        <tr>
+
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Delete</th>
+            <th>Edit</th>
+        </tr>
+    </thead>
+    @foreach (var x in Model)
+    {
+
+<tr>
+    <td>@x.FirstName</td>
+    <td>@x.LastName</td>
+    <td>@x.Phone</td>
+    <td>@x.Email</td>
+    <td>@x.Address</td>
+    <td><a asp-action="RemoveContact" asp-controller="Home" asp-route-id="@x.ID" style="background-color:white;">Delete</a></td>
+    <td><a asp-action="EditContact" asp-controller="Home" asp-route-id="@x.ID" style="background-color:white;">Edit</a></td>
+
+</tr>
+    }
+
+</table>
+
+
+
